@@ -6,6 +6,7 @@ import time
 
 import neat
 
+
 def eval_gnome(genome, config):
     net = neat.nn.FeedForwardNetwork.create(genome, config)
     net.activate()
@@ -39,16 +40,19 @@ def run(config_file):
     winner_net = neat.nn.FeedForwardNetwork.create(winner, config)
     for xi, xo in zip(xor_inputs, xor_outputs):
         output = winner_net.activate(xi)
-        print("input {!r}, expected output {!r}, got {!r}".format(xi, xo, output))
+        print("input {!r}, expected output {!r}, got {!r}".format(
+            xi, xo, output))
 
     node_names = {-1: 'A', -2: 'B', 0: 'A XOR B'}
     #visualize.draw_net(config, winner, True, node_names=node_names)
     #visualize.plot_stats(stats, ylog=False, view=True)
     #visualize.plot_species(stats, view=True)
 
-
+# print "way to go"
 if __name__ == '__main__':
-    local_dir = os.path.dirname(__file__)
-    config_path = os.path.join(local_dir, 'config-nn')
-    print ("my life my choice")
-    #run(config_path)
+    #local_dir = os.path.dirname(__file__)
+    #config_path = os.path.join(local_dir, 'config-nn')
+    x = int(input())
+    from random import randint
+    print(randint(0,3))
+    # run(config_path)
